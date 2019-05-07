@@ -3,7 +3,7 @@ package SRC;
 import java.util.Calendar;
 public class Principal extends javax.swing.JFrame {
     
-    static AdmonPersonal ap;
+    static AdmonPersonal adp = new AdmonPersonal();
     public static Calendar cal = Calendar.getInstance();
     public static int añoActual = cal.get(Calendar.YEAR);
     
