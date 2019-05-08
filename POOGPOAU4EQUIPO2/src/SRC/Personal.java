@@ -37,5 +37,5 @@ abstract public class Personal {
         this.añoIngreso = añoIngreso;
     }
     
-    abstract public void calcularUtilidad();
+    abstract public float calcularUtilidad();
 }
