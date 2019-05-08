@@ -41,4 +41,10 @@ public class AdmonPersonal {
     public void modificar(Personal p, int celda){
         personal[celda] = p;
     }
+    
+    public void eliminar(int celda){
+        for(int x = celda; x < cont - 1; x++)
+            personal[x] = personal[x + 1];
+        cont--;
+    }
 }
