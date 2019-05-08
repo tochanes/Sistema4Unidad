@@ -37,7 +37,7 @@ public class Profesor extends Personal {
     }
     
     @Override
-    public void calcularUtilidad(){
+    public float calcularUtilidad(){
         int añosAntiguedad = Principal.añoActual - getAñoIngreso();
         float utilidad = (añosAntiguedad * 1500) - 0.07f *(añosAntiguedad * 1500);
         return utilidad;
