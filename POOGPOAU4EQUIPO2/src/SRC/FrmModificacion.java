@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
  * @author Spider8.0
  */
 public class FrmModificacion extends javax.swing.JDialog {
-    int celda;
 
     /**
      * Creates new form FrmModificacion
@@ -36,6 +35,11 @@ public class FrmModificacion extends javax.swing.JDialog {
         btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setText("Clave:");
 
@@ -75,31 +79,39 @@ public class FrmModificacion extends javax.swing.JDialog {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         int clave = Integer.parseInt(txtClave.getText());
-        celda = Principal.adp.getCelda(clave);
-        if(celda != -1){
-            if(Principal.adp.queEs(celda) == 1){
-                FrmModificacionProfesor mp = new FrmModificacionProfesor(null, true);
-                mp.modificar(celda);
-                mp.setVisible(true);
-                this.dispose();
+        if(clave >= 101 && clave <= 999){
+            int celda = Principal.adp.getCelda(clave);
+            if(celda != -1){
+                if(Principal.adp.queEs(celda) == 1){
+                    FrmModificacionProfesor mp = new FrmModificacionProfesor(null, true);
+                    mp.modificar(celda);
+                    mp.setVisible(true);
+                    this.dispose();
+                }
+                else {
+                    FrmModificacionIntendente mi = new FrmModificacionIntendente(null, true);
+                    mi.modificar(celda);
+                    mi.setVisible(true);
+                    this.dispose();
+                }
             }
-            else {
-                FrmModificacionIntendente mi = new FrmModificacionIntendente(null, true);
-                mi.modificar(celda);
-                mi.setVisible(true);
-                this.dispose();
+            else{
+                JOptionPane.showMessageDialog(this, "Esa clave no esta registrada", 
+                        "Nombre inexistente", JOptionPane.ERROR_MESSAGE);
             }
         }
         else{
-            JOptionPane.showMessageDialog(this, "Esa clave no esta registrada", 
-                    "Nombre inexistente", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Ingresó una clave fuera de rango,"
+                    + " ingrese una clave de 101 a 999", 
+                        "Clave fuera de rango", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_btnBuscarActionPerformed
-    
-    public int getCelda(){
-        return celda;
-    }
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+       this.dispose();
+    }//GEN-LAST:event_formWindowClosed
+
     /**
      * @param args the command line arguments
      */
