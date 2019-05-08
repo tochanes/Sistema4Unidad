@@ -27,7 +27,7 @@ public class Intendente extends Personal{
     }
     
     @Override
-    public void calcularUtilidad(){
+    public float calcularUtilidad(){
         int añosAntiguedad = Principal.añoActual - getAñoIngreso();
         if(nivel < 3){
             return (añosAntiguedad * 500 + 2500) - 0.05f * (añosAntiguedad * 500 + 2500);
