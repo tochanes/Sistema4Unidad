@@ -54,14 +54,29 @@ public class Principal extends javax.swing.JFrame {
         jMenu4.setText("Alta");
 
         opcProfesorAltas.setText("Profesor");
+        opcProfesorAltas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcProfesorAltasActionPerformed(evt);
+            }
+        });
         jMenu4.add(opcProfesorAltas);
 
         opcIntendenteAltas.setText("Intendente");
+        opcIntendenteAltas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcIntendenteAltasActionPerformed(evt);
+            }
+        });
         jMenu4.add(opcIntendenteAltas);
 
         jMenu2.add(jMenu4);
 
         opcModificaciones.setText("Modificacion");
+        opcModificaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcModificacionesActionPerformed(evt);
+            }
+        });
         jMenu2.add(opcModificaciones);
 
         opcBaja.setText("Baja");
@@ -108,6 +123,21 @@ public class Principal extends javax.swing.JFrame {
     private void opcSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_opcSalirActionPerformed
+
+    private void opcProfesorAltasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcProfesorAltasActionPerformed
+        FrmAltaProfesor ap = new FrmAltaProfesor(this, true);
+        ap.setVisible(true);
+    }//GEN-LAST:event_opcProfesorAltasActionPerformed
+
+    private void opcIntendenteAltasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcIntendenteAltasActionPerformed
+        FrmAltaIntendente ai = new FrmAltaIntendente(this, true);
+        ai.setVisible(true);
+    }//GEN-LAST:event_opcIntendenteAltasActionPerformed
+
+    private void opcModificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcModificacionesActionPerformed
+        FrmModificacion m = new FrmModificacion(this, true);
+        m.setVisible(true);
+    }//GEN-LAST:event_opcModificacionesActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

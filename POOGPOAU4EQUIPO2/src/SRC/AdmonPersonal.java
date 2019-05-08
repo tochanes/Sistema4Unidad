@@ -26,4 +26,19 @@ public class AdmonPersonal {
         cont++;
     }
     
+    public int queEs(int celda){
+            if(personal[celda] instanceof Profesor)
+                return 1;
+            else
+                //Es un Intendente
+                return 2;
+    }
+    
+    public Personal getPersonal(int celda){
+        return personal[celda];
+    }
+    
+    public void modificar(Personal p, int celda){
+        personal[celda] = p;
+    }
 }
