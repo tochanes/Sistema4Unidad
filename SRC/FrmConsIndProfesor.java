@@ -107,9 +107,6 @@ public class FrmConsIndProfesor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
         
         public void showMe(int celda){
-        
-        String nombre, titulo, departamento;
-        int clave, añoIngreso, horas;
             
         per = Principal.adp.getPersonal(celda);
         
