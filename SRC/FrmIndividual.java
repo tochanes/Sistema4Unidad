@@ -81,6 +81,7 @@ public class FrmIndividual extends javax.swing.JDialog {
                     FrmConsIndProfesor cip = new FrmConsIndProfesor(null, true);
                     cip.setVisible(true);
                     this.dispose();
+                    cip.showMe(celda);
                     
                 }
                 else {
