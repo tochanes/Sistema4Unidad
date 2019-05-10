@@ -105,16 +105,20 @@ public class FrmConsIndProfesor extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-        String nombre, titulo, departamento;
-        int clave, añoIngreso, horas;
+        
         public void showMe(int celda){
         
+        String nombre, titulo, departamento;
+        int clave, añoIngreso, horas;
+            
         per = Principal.adp.getPersonal(celda);
-        nombre = txtNombre.getText();
-        añoIngreso = Integer.parseInt(txtAñoIngreso.getText());
-        titulo = txtTitulo.getText();
-        departamento = txtDepartamento.getText();
-        horas = Integer.parseInt(txtHoras.getText());
+        
+        txtClave.setText(Integer.toString(per.getClave()));
+        txtNombre.setText(per.getNombre());
+        txtAñoIngreso.setText(Integer.toString(per.getAñoIngreso()));
+        txtTitulo.setText(((Profesor)per).getTitulo());
+        txtDepartamento.setText(((Profesor)per).getDepartamento());
+        txtHoras.setText(Integer.toString(((Profesor)per).getHoras()));
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
